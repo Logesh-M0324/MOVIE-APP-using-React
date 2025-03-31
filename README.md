@@ -11,7 +11,7 @@ If you want to clone this project, follow these steps:
 
 Clone the repository:
 
-1.)git clone https://github.com/yourusername/movie-project.git
+1.)git clone https://github.com/Logesh-M0324/MOVIE-APP-using-React.git
 cd movie-project
 
 2.)Install dependencies (since node_modules is not included):
