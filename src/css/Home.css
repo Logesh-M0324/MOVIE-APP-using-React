@@ -1,0 +1,123 @@
+body {
+  background: url('../assets/movie-background.webp') no-repeat center center/cover;
+  background-attachment: fixed;
+  animation: fadeInBackground 2s ease-in-out;
+}
+
+@keyframes fadeInBackground {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.search-form {
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+  backdrop-filter: blur(10px);
+  padding: 1rem;
+  border-radius: 12px;
+}
+
+.search-input {
+  width: 70%;
+  padding: 0.8rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ff4757;
+  outline: none;
+  transition: box-shadow 0.3s, transform 0.2s;
+}
+
+.search-input:focus {
+  box-shadow: 0 0 15px rgba(255, 71, 87, 0.9);
+  transform: scale(1.05);
+}
+
+.search-button {
+  margin-left: 0.5rem;
+  padding: 0.8rem 1.5rem;
+  background-color: #ff4757;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.search-button:hover {
+  background-color: #e03e4d;
+  transform: scale(1.1);
+}
+
+.movies-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+.movie-card-wrapper {
+  display: flex;
+  justify-content: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+}
+
+.movie-card-wrapper:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 30px rgba(255, 71, 87, 0.7);
+}
+
+.movie-card-wrapper::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  background: rgba(255, 71, 87, 0.3);
+  border-radius: 12px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.movie-card-wrapper:hover::before {
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .movies-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .movies-grid {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1rem;
+  }
+}
